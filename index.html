@@ -1,0 +1,255 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI & DS Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* === Dark Background Sparkle Effect === */
+    body {
+      background-color: #0f0f0f;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    .sparkle {
+      position: fixed;
+      width: 2px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Skill Bar */
+    .animate-bar {
+      animation: fillBar 2s ease-in-out forwards;
+    }
+    @keyframes fillBar {
+      from { width: 0%; }
+      to { width: var(--target-width); }
+    }
+
+    /* Section Fade-in 3D */
+    .fade-3d {
+      opacity: 0;
+      transform: perspective(1000px) rotateX(20deg) translateY(30px);
+      transition: all 1s ease;
+    }
+
+    .fade-3d.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <!-- Minimal Glowing Sparkles -->
+  <div class="pointer-events-none z-0">
+    <!-- Generate 30 sparkles with random positions using JS -->
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const sparkle = document.createElement("div");
+        sparkle.classList.add("sparkle");
+        sparkle.style.left = `${Math.random() * 100}vw`;
+        sparkle.style.top = `${Math.random() * 100}vh`;
+        sparkle.style.animationDuration = `${5 + Math.random() * 5}s`;
+        sparkle.style.opacity = Math.random() * 0.3 + 0.1;
+        document.body.appendChild(sparkle);
+      }
+    </script>
+  </div>
+
+  <!-- Page Content -->
+  <div id="wrapper" class="space-y-10 relative z-10">
+
+    <!-- Header -->
+    <section class="flex flex-col items-center justify-center py-10 bg-[#1c1c1c] shadow-md fade-3d">
+      <div class="flex items-center space-x-6">
+        <div class="text-left">
+          <h1 class="text-5xl font-bold text-blue-400 animate-pulse">KAMAL RAJ </h1>
+          <p class="text-md text-gray-400">3rd Year B.Tech - Artificial Intelligence & Data Science</p>
+        </div>
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg transform transition-transform duration-500 hover:scale-110">
+          <img src=" WhatsApp Image 2025-09-28 at 7.37.13 PM.jpeg" alt="Profile" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    
+
+
+    <!-- About Me -->
+    <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-400">About Me</h2>
+      <p class="text-gray-300 leading-relaxed mb-4">
+         <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+  <h2 class="text-2xl font-semibold mb-4 text-blue-400">About Me</h2>
+  <ul class="list-disc list-inside text-gray-300 space-y-2">
+    <li>My name is <strong>Kamal Raj</strong>, and I am from <strong>Udumalpet</strong>.</li>
+    <li>Currently pursuing <strong>B.Tech in Artificial Intelligence and Data Science</strong> (3rd Year) at <strong>Dhanalakshmi Srinivasan University</strong>, Trichy.</li>
+    <li>Completed schooling at <strong>JSR Higher Secondary School</strong>, Madathukulam.</li>
+    <li>Completed a <strong>14-day internship</strong> in Data Science at <strong>NSIC, Chennai</strong>.</li>
+    <li>Participated in multiple <strong>workshops and symposiums</strong> in Trichy, Pollachi, and Chennai.</li>
+    <li>Strong interests in <strong>machine learning</strong>, <strong>data analysis</strong>, and <strong>web development</strong>.</li>
+    <li>Aspiring to develop a project on <strong>face tracking and emotion detection</strong> using <strong>Python and C++</strong>.</li>
+  </ul>
+</section>
+
+      </p>
+      <div class="mt-6">
+        <h3 class="text-xl font-semibold text-purple-400 mb-2">🎯 Career Goals</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-1">
+          <li>build face tacking emotional ai </li>
+          <li>Contribute to global open-source projects</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Programming Languages -->
+     <section class=" px-8 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-400">Programming Languages</h2>
+      <div class="space-y-6">
+        <div>
+          <p class="mb-1 text-gray-300">Python</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-blue-500 h-4 rounded-full animate-bar" style="--target-width: 90%"></div>
+          </div>
+        </div>
+        <div>
+          <p class="mb-1 text-gray-300">JAVA</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-purple-500 h-4 rounded-full animate-bar" style="--target-width: 75%"></div>
+          </div>
+        </div>
+        <div>
+          <p class="mb-1 text-gray-300">C,C++</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-green-500 h-4 rounded-full animate-bar" style="--target-width: 70%"></div>
+          </div>
+        </div>
+        <div>
+          <p class="mb-1 text-gray-300">HTML</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class=" bg-purple-500 h-4 rounded-full animate-bar" style="--target-width: 95%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Other skills-->
+    <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+      <h2 class="text-2xl font-semibold mb-6 text-blue-400">Other skills</h2>
+      <div class="space-y-6">
+        <div>
+          <p class="mb-1 text-gray-300">github</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-purple-500 h-4 rounded-full animate-bar" style="--target-width: 95%"></div>
+          </div>
+          <div>
+          <p class="mb-1 text-gray-300">vscode </p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-blue-500 h-4 rounded-full animate-bar" style="--target-width: 95%"></div>
+          </div>
+        </div>
+        <div>
+          <p class="mb-1 text-gray-300">tailwindcss</p>
+          <div class="w-full bg-gray-700 rounded-full h-4">
+            <div class="bg-purple-500 h-4 rounded-full animate-bar" style="--target-width: 70%"></div>
+          </div>
+    <!-- Projects -->
+    <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-400">Projects</h2>
+      <div class="space-y-4">
+        <div class="bg-[#2a2a2a] p-4 rounded-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+          <h3 class="font-semibold text-lg text-white">Student Performance Prediction</h3>
+          <p class="text-sm text-gray-400">ML model to predict student success using logistic regression.</p>
+          <a href="https://github.com/kamalraj249" class="text-blue-400 text-sm hover:underline">View on GitHub</a>
+
+        </div>
+        <div class="bg-[#2a2a2a] p-4 rounded-md hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+          <h3 class="font-semibold text-lg text-white">AI Chatbot</h3>
+          <p class="text-sm text-gray-400">Built a chatbot using NLP and Rasa trained on university FAQs.</p>
+          <a href="#" class="text-blue-400 text-sm hover:underline">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-400">Certifications</h2>
+      <ul class="list-disc list-inside space-y-2 text-gray-300">
+        <li>Python for Data Science - NSIC</li>
+        <li>Machine Learning - SATHIYABAMA </li>
+        <li>Deep Learning Specialization - NSIC</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section class="px-10 py-8 bg-[#1a1a1a] rounded-xl shadow-md fade-3d mx-4">
+      <h2 class="text-2xl font-semibold mb-4 text-blue-400">Contact</h2>
+      <p class="text-gray-400 mb-2">📧 Email: <a href="kamalraj.b20@gmail.com" class="text-blue-300 hover:underline">your.email@example.com</a></p>
+      <p class="text-gray-400 mb-4">📱 Phone: +91-9342618180</p>
+      <div class="flex space-x-4">
+       <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="hover:scale-110 transform transition duration-300 inline-block">
+  <div class="bg-white p-1 rounded-sm inline-flex items-center justify-center w-8 h-8">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="w-6 h-6" />
+  </div>
+</a>
+
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="transform hover:scale-125 transition duration-300">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" class="w-6 h-6">
+        </a>
+      </div>
+    </section>
+
+    <!-- Resume Button -->
+    <section class="px-10 py-8 text-center fade-3d">
+      <a href="blank" download class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 hover:scale-105 transition transform duration-300">
+        📄 Download Resume
+      </a>
+    </section>
+
+  </div>
+
+  <!-- Scroll-triggered 3D Animation -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-3d').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
+
+
+</body>
+</html>
+
+    </h1>
+  </body>
+</html>
